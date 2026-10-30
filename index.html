@@ -1,0 +1,593 @@
+<!DOCTYPE html>  <html lang="en">  
+<head>  
+<meta charset="utf-8">  
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">  
+<title>Happy Birthday, Kiyoshi! 💖</title>  
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Caveat:wght@500;700&family=Pacifico&display=swap" rel="stylesheet">  
+<style>  
+:root{--red:#b3202c;--pink:#d62975;--paper:rgba(255,250,245,.93);--ink:#5a1218;--check:rgba(214,41,117,.12);--soft:#f6d9d6;--b1:#fff0f6;--b2:#ffd8e8;--b3:#5a174d;--btnT:#fff;  
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}  
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--red:#ff7b83;--pink:#ff7aa8;--paper:rgba(43,17,20,.93);--ink:#ffe3de;--check:rgba(255,120,150,.08);--soft:#4a1f24;--b1:#2a0b1c;--b2:#3b1030;--b3:#12040f;--btnT:#2b0a10}}  
+:root[data-theme="dark"]{--red:#ff7b83;--pink:#ff7aa8;--paper:rgba(43,17,20,.93);--ink:#ffe3de;--check:rgba(255,120,150,.08);--soft:#4a1f24;--b1:#2a0b1c;--b2:#3b1030;--b3:#12040f;--btnT:#2b0a10}  
+*{box-sizing:border-box}  
+html{height:100%;scroll-padding-top:env(safe-area-inset-top,0px)}  
+body{margin:0;min-height:100%;font-family:Fredoka,"Trebuchet MS",sans-serif;color:var(--ink);overflow-x:hidden;padding:18px 14px;display:flex;align-items:center;justify-content:center;  
+background:linear-gradient(90deg,var(--check) 50%,transparent 50%) 0 0/30px 30px,linear-gradient(var(--check) 50%,transparent 50%) 0 0/30px 30px,radial-gradient(circle at top,var(--b1),var(--b2) 45%,var(--b3));background-attachment:fixed}  
+.card{position:relative;z-index:2;margin:10px 0;width:100%;max-width:480px;min-height:540px;background:var(--paper);border-radius:28px;padding:28px 20px;text-align:center;box-shadow:0 0 0 6px var(--paper),0 0 0 9px var(--red);display:flex;align-items:center;justify-content:center}  
+.screen{display:none;width:100%;flex-direction:column;align-items:center;gap:14px}  
+.screen.on{display:flex;animation:pin .5s ease both}  
+@keyframes pin{from{opacity:0;transform:translateY(16px)}}  
+h1,h2{margin:0;color:var(--red);line-height:1.15}  
+h1{font-size:2rem;transform:rotate(-3deg)}  
+h2{font-size:1.7rem;font-family:Pacifico,Fredoka,cursive;font-weight:400}  
+p{margin:0;line-height:1.5}  
+.big{font-size:5rem;line-height:1}  
+.small{font-size:.9rem;opacity:.8}  
+button{font:inherit;font-weight:700;color:var(--btnT);background:linear-gradient(135deg,var(--red),var(--pink));border:0;border-radius:999px;padding:10px 26px;font-size:1.1rem;cursor:pointer;box-shadow:0 4px 0 rgba(0,0,0,.25);touch-action:manipulation}  
+button:active{transform:translateY(3px);box-shadow:0 1px 0 rgba(0,0,0,.25)}  
+button:focus-visible,[role=button]:focus-visible{outline:3px solid var(--ink);outline-offset:3px}  
+button[hidden]{display:none}  
+.row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}  
+.gifts{display:flex;gap:10px;justify-content:center}  
+.gift{font-size:4.2rem;background:none;box-shadow:none;padding:4px;color:inherit;transition:transform .15s}  
+.gift:hover{transform:rotate(-8deg) scale(1.08)}  
+.gift.done{opacity:.4;filter:grayscale(.6)}  
+.photo{width:120px;height:140px;border-radius:10px;background:var(--soft);border:5px solid #fff;box-shadow:0 3px 8px rgba(0,0,0,.25);display:flex;align-items:center;justify-content:center;font-size:2.4rem;cursor:pointer;overflow:hidden}  
+.photo img{width:100%;height:100%;object-fit:cover}  
+.photo.big-photo{width:170px;height:215px;transform:rotate(-3deg)}  
+.photo.big-photo img{object-position:center 30%}  
+.wall{display:flex;flex-wrap:wrap;gap:14px;justify-content:center}  
+.wall .photo:nth-child(odd){transform:rotate(-4deg)}.wall .photo:nth-child(even){transform:rotate(3deg)}  
+.letter{font-family:Caveat,"Comic Sans MS",cursive;font-size:1.45rem;text-align:left;line-height:1.35;padding:4px 8px}  
+.letter p+p{margin-top:8px}  
+.msg{background:var(--soft);border-radius:22px;padding:18px;text-align:left;line-height:1.7}  
+.msg p+p{margin-top:10px}  
+.love{font-family:Pacifico,cursive;color:var(--red);text-align:center;font-size:1.4rem}  
+#hg{position:relative;width:100%;height:280px;overflow:hidden;border-radius:20px;background:rgba(255,255,255,.3);border:1px solid rgba(255,255,255,.5)}  
+#hg .chip{position:absolute;left:10px;top:10px;background:var(--paper);padding:6px 14px;border-radius:999px;font-size:.85rem;font-weight:600}  
+.hh{position:absolute;background:none;box-shadow:none;padding:0;color:inherit;font-size:34px;filter:drop-shadow(0 3px 8px #ff4d9466);animation:hp 1s infinite alternate}  
+@keyframes hp{to{transform:scale(1.15)}}  
+.env{width:min(280px,80vw);height:185px;margin:18px auto 24px;position:relative;cursor:pointer;perspective:900px}  
+.env-b{position:absolute;inset:25px 0 0;background:#ff6fa9;border-radius:8px;box-shadow:0 12px 30px #9b24544a}  
+.env-b:before{content:"";position:absolute;inset:0;background:#ff8db9;clip-path:polygon(0 0,50% 58%,100% 0)}  
+.env-f{position:absolute;top:25px;left:0;width:100%;height:100px;background:#ff4f91;clip-path:polygon(0 0,100% 0,50% 100%);transform-origin:top;transition:transform .7s;z-index:4}  
+.env-l{position:absolute;left:8%;width:84%;bottom:12px;height:132px;padding:14px 10px;background:#fffafc;color:#311022;border-radius:8px;z-index:2;transition:transform .8s,height .8s;overflow:auto;font-size:12px;line-height:1.6;text-align:left}  
+.env.open .env-f{transform:rotateX(180deg);z-index:1}  
+.env.open .env-l{transform:translateY(-92px);height:220px;z-index:5}  
+.cake{position:relative;width:210px;height:150px;margin:16px auto}  
+.cb{position:absolute;bottom:0;width:210px;height:85px;background:linear-gradient(#ff8fba,#ff3f8f);border-radius:16px 16px 25px 25px;box-shadow:0 14px 28px #ff3f8f55}  
+.ct{position:absolute;bottom:70px;width:210px;height:40px;background:#fff7fb;border-radius:50%}  
+.cd{position:absolute;bottom:105px;left:96px;width:18px;height:42px;background:repeating-linear-gradient(45deg,#fff,#fff 6px,#ff4d94 6px,#ff4d94 12px);border-radius:6px}  
+.fl{position:absolute;bottom:143px;left:95px;width:20px;height:29px;background:radial-gradient(circle,#fff7a1 20%,#ffb300 60%,#ff4d00 100%);border-radius:50%;animation:fk .25s infinite alternate;cursor:pointer}  
+@keyframes fk{to{transform:scale(1.13) rotate(4deg)}}  
+.btn-m{position:fixed;top:calc(env(safe-area-inset-top,0px) + 10px);right:12px;z-index:50;font-size:.85rem;padding:8px 16px;background:#fff;color:#d62975}  
+.pop{position:fixed;pointer-events:none;font-size:1.8rem;z-index:40;animation:fly 1.6s ease-out forwards}  
+@keyframes fly{to{transform:translate(var(--x),var(--y)) rotate(360deg);opacity:0}}  
+.hf{position:fixed;bottom:-40px;z-index:1;pointer-events:none;animation:fh linear forwards}  
+@keyframes fh{to{transform:translateY(-115vh) rotate(360deg) scale(1.5);opacity:0}}  
+.bl{position:fixed;width:45px;height:58px;border-radius:50% 50% 45% 45%;opacity:.7;z-index:0;pointer-events:none;animation:bf 4s ease-in-out infinite}  
+@keyframes bf{50%{transform:translateY(-18px) rotate(5deg)}}  
+.cf{position:fixed;top:-15px;width:9px;height:14px;z-index:30;pointer-events:none;animation:fall 3.5s linear forwards}  
+@keyframes fall{to{transform:translateY(110vh) rotate(720deg);opacity:0}}  
+#fw{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:35}  
+.opts{display:flex;flex-direction:column;gap:10px;width:100%}  
+.opt{width:100%;background:var(--soft);color:var(--ink);box-shadow:0 3px 0 rgba(0,0,0,.18);font-size:1rem;padding:11px 16px}  
+.opt:disabled{opacity:.45;cursor:default}  
+.shake{animation:sh .4s}  
+@keyframes sh{25%{transform:translateX(-8px)}75%{transform:translateX(8px)}}  
+@media (prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}  
+</style>  <!-- ============================================================  
+     WELCOME SCREEN (added) — every selector, id and keyframe below  
+     is prefixed "wl" so it cannot collide with the original styles.  
+     ============================================================ -->  <style>  
+/* scroll lock while the welcome screen exists (:has) + JS fallback class */  
+html:has(#wlScreen),html.wl-lock{overflow:hidden}  
+html:has(#wlScreen) body,body.wl-lock{overflow:hidden}  
+  
+.wl{position:fixed;inset:0;z-index:100;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:clamp(12px,3vh,26px);  
+padding:calc(18px + env(safe-area-inset-top,0px)) 18px calc(18px + env(safe-area-inset-bottom,0px));text-align:center;overflow:hidden;color:#8a1f4d;  
+background:radial-gradient(circle at 50% 16%,#fff8fc 0%,#ffe3f0 36%,#ffc6dd 70%,#ffadce 100%);  
+touch-action:none;-webkit-user-select:none;user-select:none;-webkit-tap-highlight-color:transparent;  
+opacity:1;transition:opacity .9s ease,transform .9s ease}  
+.wl.wl-out{opacity:0;transform:scale(1.04);pointer-events:none}  
+  
+/* soft drifting glow blobs */  
+.wl-blob{position:absolute;border-radius:50%;filter:blur(46px);opacity:.55;pointer-events:none;animation:wl-drift 14s ease-in-out infinite alternate}  
+.wl-blob.a{width:70vmax;height:70vmax;left:-28vmax;top:-26vmax;background:#ff9fc8}  
+.wl-blob.b{width:60vmax;height:60vmax;right:-24vmax;top:18vh;background:#dcc8ff;animation-duration:18s;animation-delay:-4s}  
+.wl-blob.c{width:56vmax;height:56vmax;left:-14vmax;bottom:-28vmax;background:#ffd2c4;animation-duration:16s;animation-delay:-8s}  
+@keyframes wl-drift{to{transform:translate(7vmax,5vmax) scale(1.15)}}  
+  
+/* floating hearts + sparkles layer */  
+.wl-fx{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:1}  
+.wl-fh{position:absolute;bottom:-44px;line-height:1;filter:drop-shadow(0 2px 6px rgba(255,77,148,.45));animation:wl-rise linear forwards}  
+.wl-fh.wl-static{bottom:auto}  
+@keyframes wl-rise{0%{transform:translate(0,0) rotate(-10deg);opacity:0}10%{opacity:.95}88%{opacity:.8}100%{transform:translate(var(--dx,0px),-118vh) rotate(14deg);opacity:0}}  
+.wl-sp{position:absolute;line-height:1;color:#fff;text-shadow:0 0 6px #fff,0 0 14px #ff7fb5;animation:wl-tw 2.2s ease-in-out forwards}  
+.wl-sp.wl-static{opacity:.85}  
+@keyframes wl-tw{0%{transform:scale(0) rotate(0);opacity:0}50%{transform:scale(1) rotate(90deg);opacity:1}100%{transform:scale(0) rotate(180deg);opacity:0}}  
+  
+/* headline + hint */  
+.wl .wl-title{position:relative;z-index:2;margin:0;max-width:min(92vw,560px);font-family:Pacifico,Fredoka,"Trebuchet MS",cursive;font-weight:400;  
+font-size:clamp(1.55rem,6.4vw,2.5rem);line-height:1.32;color:#c01c63;transform:none;  
+text-shadow:0 2px 0 #fff,0 0 22px rgba(255,255,255,.95),0 6px 22px rgba(214,41,117,.3);animation:wl-in .9s ease both}  
+@keyframes wl-in{from{opacity:0;transform:translateY(14px)}}  
+.wl .wl-hint{position:relative;z-index:2;margin:0;font-family:Fredoka,"Trebuchet MS",sans-serif;font-weight:600;font-size:clamp(1.05rem,4.2vw,1.35rem);  
+color:#a3225a;text-shadow:0 1px 0 rgba(255,255,255,.9);animation:wl-nudge 1.8s ease-in-out infinite}  
+@keyframes wl-nudge{50%{transform:scale(1.06);opacity:.8}}  
+  
+/* gift stage */  
+.wl-stage{position:relative;z-index:2;width:220px;height:230px;flex:none}  
+.wl-scale{position:absolute;left:50%;top:50%;width:220px;height:230px;margin:-115px 0 0 -110px;display:flex;align-items:center;justify-content:center}  
+.wl-halo{position:absolute;width:270px;height:270px;border-radius:50%;pointer-events:none;  
+background:radial-gradient(circle,rgba(255,255,255,.95) 0%,rgba(255,160,200,.5) 45%,transparent 70%);animation:wl-halo 2.4s ease-in-out infinite}  
+@keyframes wl-halo{50%{transform:scale(1.16);opacity:.75}}  
+.wl-shadow{position:absolute;left:50%;bottom:6px;width:150px;height:18px;margin-left:-75px;border-radius:50%;background:rgba(150,30,80,.3);filter:blur(6px);animation:wl-sh 1.8s ease-in-out infinite}  
+@keyframes wl-sh{0%,100%{transform:scale(1);opacity:1}40%{transform:scale(.7);opacity:.6}}  
+  
+.wl .wl-gift{all:unset;box-sizing:border-box;display:block;position:relative;width:180px;height:200px;cursor:pointer;  
+-webkit-tap-highlight-color:transparent;touch-action:manipulation;transform-origin:50% 100%;animation:wl-bounce 1.8s ease-in-out infinite}  
+.wl .wl-gift:focus-visible{outline:3px solid #c01c63;outline-offset:10px;border-radius:18px}  
+@keyframes wl-bounce{  
+0%,100%{transform:translateY(0) scale(1,1)}  
+15%{transform:translateY(0) scale(1.06,.93)}  
+40%{transform:translateY(-24px) scale(.97,1.04)}  
+62%{transform:translateY(0) scale(1.04,.96)}  
+74%{transform:translateY(-7px) scale(1,1)}  
+86%{transform:translateY(0) scale(1,1)}}  
+  
+.wl-box{position:absolute;left:10px;bottom:0;width:160px;height:112px;border-radius:6px 6px 14px 14px;overflow:hidden;  
+background:radial-gradient(circle,rgba(255,255,255,.34) 3px,transparent 4px) 0 0/22px 22px,linear-gradient(160deg,#ff9cc4 0%,#ff5f9f 55%,#e23a85 100%);  
+box-shadow:inset 8px 0 14px rgba(255,255,255,.35),inset -14px -10px 18px rgba(150,20,80,.35),0 10px 20px rgba(190,40,110,.35)}  
+.wl-rv{position:absolute;left:50%;top:0;bottom:0;width:34px;margin-left:-17px;background:linear-gradient(90deg,#fff1f7,#ffd3e5 50%,#ffb9d6);box-shadow:inset 0 0 6px rgba(190,40,110,.25)}  
+.wl-beam{position:absolute;left:30px;bottom:106px;width:120px;height:0;opacity:0;border-radius:60px 60px 0 0;filter:blur(2px);  
+background:linear-gradient(to top,rgba(255,255,255,.95),rgba(255,214,232,0));transition:height .6s ease .15s,opacity .6s ease .15s}  
+.wl-lid{position:absolute;left:2px;bottom:104px;width:176px;height:46px;border-radius:12px;transform-origin:12% 100%;  
+background:linear-gradient(160deg,#ffb0d0,#ff5f9f 60%,#e8438a);  
+box-shadow:inset 6px 0 10px rgba(255,255,255,.4),inset -10px -6px 14px rgba(150,20,80,.3),0 6px 12px rgba(190,40,110,.3);  
+transition:transform .75s cubic-bezier(.3,1.5,.5,1),opacity .6s ease .3s}  
+.wl-lv{position:absolute;left:50%;top:0;bottom:0;width:38px;margin-left:-19px;background:linear-gradient(90deg,#fff1f7,#ffd3e5 50%,#ffb9d6);box-shadow:inset 0 0 6px rgba(190,40,110,.25)}  
+.wl-bow{position:absolute;left:50%;bottom:100%;width:0;height:0}  
+.wl-bow i{position:absolute;bottom:-8px;width:54px;height:40px;border-radius:50%/60% 60% 40% 40%;  
+background:radial-gradient(circle at 35% 30%,#fff7fb,#ffc2dc 60%,#ff9cc4);box-shadow:inset 0 -4px 8px rgba(190,40,110,.3),0 3px 6px rgba(190,40,110,.25)}  
+.wl-bow .l{left:-56px;transform:rotate(-24deg)}  
+.wl-bow .r{left:2px;transform:rotate(24deg)}  
+.wl-bow .k{left:-13px;width:26px;height:26px;border-radius:50%;z-index:2}  
+  
+/* open state */  
+.wl.wl-open .wl-gift{pointer-events:none;animation:wl-pop .6s ease forwards}  
+@keyframes wl-pop{0%{transform:scale(1)}35%{transform:scale(1.1,.9)}100%{transform:scale(1)}}  
+.wl.wl-open .wl-lid{transform:translate(-34px,-64px) rotate(-26deg);opacity:0}  
+.wl.wl-open .wl-beam{height:92px;opacity:1}  
+.wl.wl-open .wl-halo{animation:wl-flash 1s ease-out forwards}  
+@keyframes wl-flash{to{transform:scale(2.6);opacity:0}}  
+.wl.wl-open .wl-shadow{animation:none}  
+.wl.wl-open .wl-hint{animation:none;opacity:.0;transition:opacity .4s ease}  
+  
+/* heart + sparkle burst */  
+.wl-burst{position:absolute;z-index:6;left:var(--sx);top:var(--sy);line-height:1;pointer-events:none;  
+filter:drop-shadow(0 2px 6px rgba(255,77,148,.5));animation:wl-fly 1.5s cubic-bezier(.15,.7,.3,1) forwards}  
+@keyframes wl-fly{0%{transform:translate(-50%,-50%) scale(.3);opacity:1}100%{transform:translate(calc(-50% + var(--x)),calc(-50% + var(--y))) rotate(var(--r)) scale(1.1);opacity:0}}  
+  
+/* short / landscape screens */  
+@media (max-height:620px){.wl-stage{width:154px;height:161px}.wl-scale{transform:scale(.7)}}  
+@media (max-height:480px){.wl .wl-title{font-size:1.25rem}.wl-stage{width:121px;height:127px}.wl-scale{transform:scale(.55)}}  
+</style>  <!-- ============================================================  
+     YOUTUBE MUSIC PLAYER (added) — every id/class is prefixed "yt".  
+     The player sits BELOW the card in normal page flow, so it never  
+     covers the birthday content.  
+     ============================================================ -->  <style>  
+body{flex-direction:column;gap:6px}  
+.yt-dock{position:relative;z-index:2;flex:none;width:200px;max-width:100%;height:200px;margin:0 0 10px;border-radius:18px;overflow:hidden;background:#000;  
+box-shadow:0 0 0 4px var(--paper),0 0 0 6px var(--red)}  
+.yt-dock iframe{display:block;width:200px;height:200px;max-width:100%;border:0}  
+.yt-msg{position:fixed;left:50%;bottom:calc(env(safe-area-inset-bottom,0px) + 12px);transform:translateX(-50%);z-index:60;width:max-content;max-width:min(92vw,420px);  
+display:flex;align-items:center;gap:10px;flex-wrap:wrap;justify-content:center;text-align:left;  
+background:var(--paper);color:var(--ink);border:2px solid var(--red);border-radius:18px;padding:10px 14px;font-size:.9rem;line-height:1.4;box-shadow:0 8px 22px rgba(0,0,0,.25)}  
+.yt-msg[hidden]{display:none}  
+.yt-msg button{font-size:.9rem;padding:8px 18px;flex:none}  
+</style>  </head>  
+<body>  <!-- ===== WELCOME SCREEN (added) ===== -->  <div class="wl" id="wlScreen" role="dialog" aria-modal="true" aria-label="Welcome">  
+<div class="wl-blob a" aria-hidden="true"></div>  
+<div class="wl-blob b" aria-hidden="true"></div>  
+<div class="wl-blob c" aria-hidden="true"></div>  
+<div class="wl-fx" id="wlFx" aria-hidden="true"></div>  
+<h1 class="wl-title">Hey Kiyoshi, someone made something special for you! 💗</h1>  
+<div class="wl-stage" id="wlStage">  
+<div class="wl-scale">  
+<div class="wl-halo" aria-hidden="true"></div>  
+<div class="wl-shadow" aria-hidden="true"></div>  
+<button type="button" class="wl-gift" id="wlGift" aria-label="Tap to open your surprise">  
+<span class="wl-box"><span class="wl-rv"></span></span>  
+<span class="wl-beam"></span>  
+<span class="wl-lid"><span class="wl-lv"></span><span class="wl-bow"><i class="l"></i><i class="r"></i><i class="k"></i></span></span>  
+</button>  
+</div>  
+</div>  
+<p class="wl-hint">Tap to open your surprise! 🎀</p>  
+</div>  <canvas id="fw" aria-hidden="true"></canvas>
+
+<div class="bl" aria-hidden="true" style="background:#ff5d9e;left:4%;top:15%"></div>  
+<div class="bl" aria-hidden="true" style="background:#a88aff;right:5%;top:22%;animation-delay:1s"></div>  
+<div class="bl" aria-hidden="true" style="background:#ffe36e;left:8%;bottom:12%;animation-delay:2s"></div>  
+<div class="bl" aria-hidden="true" style="background:#ff786e;right:8%;bottom:10%;animation-delay:.5s"></div>  
+<button class="btn-m" id="mb" aria-pressed="false">🎵 Play Music</button>  <main class="card" id="app">  <section class="screen on" id="s-intro">  
+<div class="big" id="face">🐥</div>  
+<h1 id="introT">Kiyoshi, Meri taraf se tumhare birthday par ek chota sa gift</h1>  
+<p id="introP">Dekhna chahogi?</p>  
+<div class="row"><button id="yes">Yes</button><button id="no">No</button></div>  
+</section>  <section class="screen" id="s-hearts">  
+<h2>Find the hidden hearts</h2>  
+<p>Garden mein 5 hearts chhupe hain. Sab dhundo, tab agla surprise khulega.</p>  
+<div id="hg"><div class="chip">Found: <span id="hs">0</span>/5</div></div>  
+<p class="small" id="hint">Dhyaan se dekho… hearts chhupe hain! 👀</p>  
+</section>  <section class="screen" id="s-gifts">  
+<h1>Har gift mein tumhare liye kuch hai…</h1>  
+<div class="gifts">  
+<button class="gift" data-g="card" aria-label="Gift 1">🎁</button>  
+<button class="gift" data-g="wish" aria-label="Gift 2">🎁</button>  
+<button class="gift" data-g="memories" aria-label="Gift 3">🎁</button>  
+</div>  
+<p class="small">Kisi bhi gift pe tap karo</p>  
+<button id="letterBtn" hidden>💌 Ek cheez aur…</button>  
+</section>  <section class="screen" id="s-card">  
+<div class="big">🎂</div>  
+<h1>Happy Birthday!</h1>  
+<div class="photo big-photo"><img src="photo.jpg" alt="Kiyoshi"></div>  
+<p>Tumhari ek chhoti si khushi bhi meri badi khushi hai. Aaj ka din sirf tumhara hai, Kiyoshi! Enjoy Your Day 😁</p>  
+<button class="back">Back</button>  
+</section>  <section class="screen" id="s-wish">  
+<h2>Make a wish</h2>  
+<div class="cake">  
+<div class="fl" id="flame" role="button" tabindex="0" aria-label="Blow out the candle"></div>  
+<div class="cd"></div><div class="ct"></div><div class="cb"></div>  
+</div>  
+<p class="small" id="wishT">Flame pe tap karke phoonk maaro</p>  
+<button id="blowBtn">Blow candle 🕯️</button>  
+<button class="back">Back</button>  
+</section>  <section class="screen" id="s-memories">  
+<h2>Mini Quiz 🧠</h2>  
+<p class="small" id="qProg">Question 1/5</p>  
+<div class="msg" id="qBox" style="width:100%"><p id="qText"></p></div>  
+<div class="opts" id="qOpts"></div>  
+<p class="small" id="qFb" aria-live="polite"></p>  
+<button class="back">Back</button>  
+</section>  <section class="screen" id="s-env">  
+<h2>A letter for Kiyoshi 💌</h2>  
+<p class="small" id="envHint">Envelope pe tap karke letter kholo.</p>  
+<div class="env"   id="env" role="button" tabindex="0" aria-label="Open the letter">  
+<div class="env-b"></div>  
+<div class="env-l"><strong style="color:#d62975">Dear Kiyoshi, 💖</strong><br><span id="typed"></span><span id="cur">▍</span></div>  
+<div class="env-f"></div>  
+</div>  
+<button id="toLetter" hidden>Aage padho 💗</button>  
+</section>  <section class="screen" id="s-letter">  
+<h2>My fav person</h2>  
+<div class="letter">  
+<p><b>Dear Kiyoshi,</b></p>  
+<p>Happy Birthday! Sach bolun to samajh nhi aa raha.Happy Birthday! 🤍🎂✨  Thank you for being there for me and supporting me so much. 🫶🤍 Every moment spent with you will always be special to me. 🥹💖 The time we spent together will forever be one of the best memories of my life. No matter what happens in the future, I'll always cherish these beautiful memories. 🤍🫂
+
+May you always stay happy and achieve everything you dream of. 🥳🎁💗 Once again, Happy Birthday! 🎂❤️✨<p>
+
+</p>  
+<p>Aaj ka din khoob enjoy karo. Love you so much! 💗</p>  
+</div>  
+<button id="toFinal">Last surprise 🎉</button>  
+</section>  <section class="screen" id="s-final">  
+<h2>Happy Birthday, Kiyoshi! 🎂</h2>  
+<div class="msg">  
+<p>May your birthday bring you countless reasons to smile, peaceful moments, exciting adventures, and dreams that slowly become beautiful realities. Never forget how special you are and how much happiness you deserve. 💖</p>  
+<p>May the year ahead be filled with kindness, laughter, good health, and memories you’ll always treasure. Keep shining in your own wonderful way, Kiyoshi. ✨</p>  
+</div>  
+<p class="love">With warmest wishes 💗</p>  
+<button id="replay">Replay the magic ✨</button>  
+</section>  </main>  <!-- ===== YOUTUBE PLAYER (added): lives outside the screens, so it is never reloaded or restarted when screens change ===== -->  <div class="yt-dock" id="ytDock"><div id="ytPlayer" title="Birthday song"></div></div>  
+<div class="yt-msg" id="ytMsg" role="status" aria-live="polite" hidden>  
+<span id="ytMsgText"></span>  
+<button type="button" id="ytPlayBtn">▶ Play Music</button>  
+</div>  <script>  
+(function(){  
+var $=function(s){return document.querySelector(s)},$$=function(s){return document.querySelectorAll(s)};  
+var reduce=matchMedia("(prefers-reduced-motion:reduce)").matches;  
+var seen={},typing=null,envOpen=false,flameOut=false,hearts=0,AC=null,musicOn=false,mt=null;  
+var letterText="On your special day, I hope life gives you a thousand little reasons to smile. May you always feel appreciated, supported, and surrounded by warmth. Keep believing in the beautiful things waiting for you. Today, and every day, I’m wishing you happiness, courage, laughter, and lovely memories. Happy Birthday, Kiyoshi! 💖";  
+  
+function show(id){$$(".screen").forEach(function(e){e.classList.remove("on")});$("#s-"+id).classList.add("on");scrollTo(0,0);  
+ if(id==="hearts")setupHearts();  
+ if(id==="final"){confetti(120);fireworks(6000)}}  
+  
+/* effects */  
+function burst(chars,n){if(reduce)return;for(var i=0;i<n;i++){var e=document.createElement("span");e.className="pop";e.textContent=chars[i%chars.length];  
+ e.style.left=(30+Math.random()*40)+"vw";e.style.top="55vh";e.style.setProperty("--x",(Math.random()*240-120)+"px");e.style.setProperty("--y",(-Math.random()*320-60)+"px");  
+ document.body.appendChild(e);setTimeout(function(x){x.remove()},1700,e)}}  
+function confetti(n){if(reduce)return;var c=["#ff4d94","#fff176","#7c4dff","#00cfc8","#fff","#ff1744"];  
+ for(var i=0;i<n;i++){var d=document.createElement("div");d.className="cf";d.style.left=Math.random()*100+"vw";d.style.background=c[i%c.length];d.style.animationDelay=Math.random()+"s";d.style.animationDuration=(2+Math.random()*2)+"s";document.body.appendChild(d);setTimeout(function(x){x.remove()},5000,d)}}  
+if(!reduce){setInterval(function(){var h=document.createElement("div");h.className="hf";h.textContent=["💗","💕","💖","🤍"][Math.floor(Math.random()*4)];h.style.left=Math.random()*100+"vw";h.style.fontSize=(16+Math.random()*22)+"px";h.style.animationDuration=(5+Math.random()*4)+"s";document.body.appendChild(h);setTimeout(function(){h.remove()},9500)},800)}  
+  
+var cv=$("#fw"),ctx=cv.getContext("2d"),pts=[],fwRun=false,fwEnd=0;  
+function resize(){cv.width=innerWidth*devicePixelRatio;cv.height=innerHeight*devicePixelRatio;ctx.setTransform(devicePixelRatio,0,0,devicePixelRatio,0,0)}  
+addEventListener("resize",resize);resize();  
+function spark(x,y){var c=["#ff3f8f","#ffe36e","#ffffff","#a88aff","#4eccc0"];for(var i=0;i<55;i++){var a=Math.random()*6.283,s=1+Math.random()*4;pts.push({x:x,y:y,vx:Math.cos(a)*s,vy:Math.sin(a)*s,l:55+Math.random()*25,m:80,c:c[i%5],z:1+Math.random()*2})}}  
+function loop(){if(!fwRun)return;ctx.clearRect(0,0,innerWidth,innerHeight);  
+ if(Date.now()<fwEnd&&Math.random()<.075)spark(innerWidth*(.15+Math.random()*.7),innerHeight*(.15+Math.random()*.48));  
+ pts=pts.filter(function(p){return p.l>0});  
+ pts.forEach(function(p){ctx.globalAlpha=Math.max(0,p.l/p.m);ctx.fillStyle=p.c;ctx.beginPath();ctx.arc(p.x,p.y,p.z,0,6.283);ctx.fill();p.x+=p.vx;p.y+=p.vy;p.vy+=.035;p.vx*=.99;p.l--});  
+ ctx.globalAlpha=1;  
+ if(Date.now()>=fwEnd&&!pts.length){fwRun=false;ctx.clearRect(0,0,innerWidth,innerHeight);return}  
+ requestAnimationFrame(loop)}  
+function fireworks(ms){if(reduce)return;pts=[];fwRun=true;fwEnd=Date.now()+ms;loop()}  
+  
+/* music: the old WebAudio "Happy Birthday" tune below is no longer started (kept only so nothing else breaks).  
+   Music is now played by the YouTube IFrame player (see the YOUTUBE script at the end of the page).  
+   music(on) and the 🎵 button just control that player; window.BDMusicUI keeps the button label in sync. */  
+var F={G4:392,A4:440,B4:494,C5:523,D5:587,E5:659,F5:698,G5:784};  
+var tune="G4 .75,G4 .25,A4 1,G4 1,C5 1,B4 2,G4 .75,G4 .25,A4 1,G4 1,D5 1,C5 2,G4 .75,G4 .25,G5 1,E5 1,C5 1,B4 1,A4 1,F5 .75,F5 .25,E5 1,C5 1,D5 1,C5 2".split(",").map(function(s){var p=s.split(" ");return [F[p[0]],+p[1]]});  
+function playTune(){var t=AC.currentTime+.05,b=.42;  
+ tune.forEach(function(n){var o=AC.createOscillator(),g=AC.createGain(),d=n[1]*b;o.type="triangle";o.frequency.value=n[0];o.connect(g);g.connect(AC.destination);  
+  g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(.16,t+.03);g.gain.exponentialRampToValueAtTime(.001,t+d*.95);o.start(t);o.stop(t+d);t+=d});  
+ mt=setTimeout(function(){if(musicOn&&AC)playTune()},(t-AC.currentTime+1.5)*1000)}  
+function music(on){var m=window.BDMusic;if(!m)return;if(on)m.start();else m.pause()}  
+window.BDMusicUI=function(p){musicOn=!!p;$("#mb").textContent=musicOn?"⏸ Pause Music":"🎵 Play Music";$("#mb").setAttribute("aria-pressed",musicOn)};  
+$("#mb").onclick=function(){music(!musicOn)};  
+  
+/* intro */  
+function go(){burst(["🎉","✨","💗"],12);if(window.BDMusic)window.BDMusic.ensure();show("hearts")}  
+function nope(){$("#face").textContent="😤";$("#introT").textContent="HOW DARE YOU!?";$("#introP").textContent="Dobara try karo.";  
+ var a=$("#app");a.classList.remove("shake");void a.offsetWidth;a.classList.add("shake");$("#no").textContent="Yes";$("#no").onclick=go}  
+$("#yes").onclick=go;$("#no").onclick=nope;  
+  
+/* hidden hearts */  
+function setupHearts(){var g=$("#hg");g.querySelectorAll(".hh").forEach(function(e){e.remove()});hearts=0;$("#hs").textContent="0";$("#hint").textContent="Dhyaan se dekho… hearts chhupe hain! 👀";  
+ for(var i=0;i<5;i++){(function(){var h=document.createElement("button");h.className="hh";h.textContent="💖";h.setAttribute("aria-label","Hidden heart");  
+  h.style.left=(8+Math.random()*78)+"%";h.style.top=(22+Math.random()*60)+"%";h.style.animationDelay=Math.random()*.8+"s";  
+  h.onclick=function(){h.disabled=true;h.style.animation="none";h.style.opacity=".25";h.style.transform="scale(1.5)";hearts++;$("#hs").textContent=hearts;  
+   if(hearts===5){$("#hint").textContent="Saare hearts mil gaye! Ab gifts kholo 🎁";burst(["💖","✨","🎈"],12);setTimeout(function(){show("gifts")},900)}};  
+  g.appendChild(h)})()}}  
+  
+/* gifts */  
+$$(".gift").forEach(function(b){b.onclick=function(){var g=b.dataset.g;seen[g]=1;b.classList.add("done");burst(["🎈","🎊","⭐"],10);show(g);  
+ if(seen.card&&seen.wish&&seen.memories)$("#letterBtn").hidden=false}});  
+$$(".back").forEach(function(b){b.onclick=function(){show("gifts")}});  
+$("#letterBtn").onclick=function(){show("env")};  
+  
+/* photo frames */  
+$$("[data-add]").forEach(function(f){function pick(){var i=document.createElement("input");i.type="file";i.accept="image/*";  
+ i.onchange=function(){if(!i.files[0])return;var r=new FileReader();r.onload=function(){f.innerHTML="";var im=new Image();im.src=r.result;im.alt="Memory photo";f.appendChild(im)};r.readAsDataURL(i.files[0])};i.click()}  
+ f.onclick=pick;f.onkeydown=function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();pick()}}});  
+  
+/* quiz: apne sawal aur jawab yahan badal sakte ho (a = sahi option ka number, 0 se shuru) */  
+var QUIZ=[  
+{q:"Mera favourite colour kaunsa hai?",o:["Red","Pink","Blue","Black"],a:3},  
+{q:"Mujhe sabse zyada kya khaana pasand hai?",o:["Pizza","Biryani","Maggi","Ice cream"],a:2},  
+{q:"Hum dono pehli baar kahan mile the?",o:["School","Phone pe","Party mein","Online"],a:3},  
+{q:"Mere hisaab se tumhari sabse pyaari aadat kaunsi hai?",o:["Hasna","Care karna","Baatein karna","Sab kuch 💗"],a:3},  
+{q:"Hum dono ko saath mein sabse zyada kya karna pasand hai?",o:["Baatein karna","Ghoomna","Movie dekhna","Khaana khana"],a:0}  
+];  
+var qi=0,score=0,tries=0;  
+function renderQ(){var q=QUIZ[qi],box=$("#qOpts");tries=0;  
+ $("#qProg").textContent="Question "+(qi+1)+"/"+QUIZ.length;$("#qText").textContent=q.q;$("#qFb").textContent="";box.innerHTML="";  
+ q.o.forEach(function(t,i){var b=document.createElement("button");b.className="opt";b.textContent=t;b.onclick=function(){answer(b,i)};box.appendChild(b)})}  
+function answer(b,i){var q=QUIZ[qi];  
+ if(i===q.a){if(!tries)score++;$("#qOpts").querySelectorAll("button").forEach(function(x){x.disabled=true});  
+  $("#qFb").textContent="Sahi jawab! 🎉";burst(["🎉","✨","💗"],10);setTimeout(nextQ,1000)}  
+ else{tries++;b.disabled=true;b.classList.remove("shake");void b.offsetWidth;b.classList.add("shake");$("#qFb").textContent="Oops, galat jawab! Dobara try karo 😜"}}  
+function nextQ(){qi++;if(qi<QUIZ.length)renderQ();else finishQ()}  
+function finishQ(){$("#qProg").textContent="Quiz complete 🎉";  
+ $("#qText").textContent="Tumhara score: "+score+"/"+QUIZ.length+". "+(score>=4?"Wah! Tum toh mujhe bahut achhe se jaante ho 💗":"Koi baat nahi, ab se aur dhyaan dena 😜💗");  
+ $("#qOpts").innerHTML="";$("#qFb").textContent="";confetti(80);fireworks(2000)}  
+function quizReset(){qi=0;score=0;renderQ()}  
+renderQ();  
+  
+/* wish */  
+function blow(){if(flameOut)return;flameOut=true;$("#flame").style.display="none";$("#blowBtn").hidden=true;$("#wishT").textContent="May God Bless You 🤞";burst(["🎉","🎂","💗"],16);confetti(60);fireworks(2500)}  
+$("#flame").onclick=blow;$("#blowBtn").onclick=blow;  
+$("#flame").onkeydown=function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();blow()}};  
+  
+/* envelope letter */  
+function openEnv(){if(envOpen)return;envOpen=true;$("#env").classList.add("open");$("#envHint").textContent="Ek chhota sa message, sirf tumhare liye…";  
+ var out=$("#typed"),i=0;typing=setInterval(function(){out.textContent=letterText.slice(0,i++);  
+  if(i>letterText.length){clearInterval(typing);$("#cur").style.display="none";$("#toLetter").hidden=false;$("#envHint").textContent="Ek bada sa birthday smile! 💗"}},reduce?2:35)}  
+$("#env").onclick=openEnv;$("#env").onkeydown=function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();openEnv()}};  
+$("#toLetter").onclick=function(){show("letter")};  
+$("#toFinal").onclick=function(){show("final")};  
+  
+/* replay */  
+$("#replay").onclick=function(){clearInterval(typing);seen={};envOpen=false;flameOut=false;quizReset();  
+ $$(".gift").forEach(function(b){b.classList.remove("done")});$("#letterBtn").hidden=true;  
+ $("#env").classList.remove("open");$("#typed").textContent="";$("#cur").style.display="inline";$("#toLetter").hidden=true;$("#envHint").textContent="Envelope pe tap karke letter kholo.";  
+ $("#flame").style.display="block";$("#blowBtn").hidden=false;$("#wishT").textContent="Flame pe double tap karke phoonk maaro";  
+ $("#face").textContent="🐥";$("#introT").textContent="Kiyoshi, maine tumhare liye kuch banaya hai!";$("#introP").textContent="Dekhna chahoge?";$("#no").textContent="No";$("#no").onclick=nope;  
+ show("intro")};  
+})();  
+</script>  <!-- ============================================================  
+     YOUTUBE MUSIC SCRIPT (added) — official YouTube IFrame Player API.  
+     Video: https://youtu.be/rtOvBOTyX00  (id: rtOvBOTyX00)  
+     Self-contained IIFE; exposes window.BDMusic = {start, pause, ensure}.  
+     The player is created once and never reloaded, so the song keeps  
+     playing (no restart) while the visitor moves between screens.  
+     ============================================================ -->  <script>  
+(function(){  
+"use strict";  
+var VID="2Bc9ET7XGDg";
+var player=null,ready=false,loading=false,pending=false,started=false,userPaused=false,chk=null;  
+var msg=document.getElementById("ytMsg"),msgTxt=document.getElementById("ytMsgText"),msgBtn=document.getElementById("ytPlayBtn");  
+  
+function ui(p){try{if(window.BDMusicUI)window.BDMusicUI(p)}catch(e){}}  
+function showMsg(t,withBtn){msgTxt.textContent=t;msgBtn.hidden=!withBtn;msg.hidden=false}  
+function hideMsg(){msg.hidden=true}  
+function state(){try{return player&&player.getPlayerState?player.getPlayerState():-1}catch(e){return -1}}  
+  
+function build(){  
+ if(player||!(window.YT&&YT.Player))return;  
+ var pv={playsinline:1,controls:0,rel:0,modestbranding:1,iv_load_policy:3,fs:0,disablekb:1,enablejsapi:1};  
+ if(/^https?:$/.test(location.protocol))pv.origin=location.origin;  
+ player=new YT.Player("ytPlayer",{width:200,height:200,videoId:VID,playerVars:pv,  
+  events:{onReady:onReady,onStateChange:onState,onError:onErr,onAutoplayBlocked:onBlocked}})}  
+  
+function load(){  
+ if(player||loading)return;  
+ if(window.YT&&YT.Player){build();return}  
+ loading=true;  
+ window.onYouTubeIframeAPIReady=function(){loading=false;build()};  
+ var s=document.createElement("script");  
+ s.src="https://www.youtube.com/iframe_api";s.async=true;  
+ s.onerror=function(){loading=false};  
+ document.head.appendChild(s)}  
+  
+function attempt(){  
+ try{player.unMute();player.setVolume(100);player.playVideo()}catch(e){}  
+ arm()}  
+  
+function arm(){clearTimeout(chk);chk=setTimeout(function(){check(0)},3000)}  
+function check(n){  
+ if(userPaused)return;  
+ if(!ready){showMsg("The YouTube player could not load yet. Please check your internet connection, then tap Play Music.",true);return}  
+ var s=state();  
+ if(s===1)return;  
+ if(s===3&&n<2){chk=setTimeout(function(){check(n+1)},3000);return}  
+ showMsg("Your browser or YouTube blocked automatic playback. Tap Play Music to start the song. 🎶",true)}  
+  
+function onReady(){ready=true;if(pending){pending=false;attempt()}}  
+function onState(e){  
+ var d=e.data;  
+ if(d===1){clearTimeout(chk);hideMsg();ui(true)}  
+ else if(d===2||d===-1||d===5){ui(false)}  
+ else if(d===0){try{player.seekTo(0);player.playVideo()}catch(x){}}   /* loop the song */  
+}  
+function onBlocked(){if(!userPaused)showMsg("Your browser blocked automatic playback. Tap Play Music to start the song. 🎶",true);ui(false)}  
+function onErr(e){  
+ clearTimeout(chk);ui(false);  
+ var c=e&&e.data;  
+ if(c===101||c===150||c===153)showMsg("YouTube is not allowing this song to play in an embedded player here. If you opened this page as a local file, please host it on a web address (https) and try again.",false);  
+ else showMsg("YouTube could not play the song right now. Please try again.",true)}  
+  
+/* start() must be called straight from a click/tap handler */  
+function start(){  
+ started=true;userPaused=false;hideMsg();  
+ if(ready){attempt()}else{pending=true;load();arm()}}  
+function pause(){  
+ userPaused=true;pending=false;clearTimeout(chk);hideMsg();  
+ if(ready){try{player.pauseVideo()}catch(e){}}  
+ ui(false)}  
+function ensure(){  
+ if(!started||userPaused||!ready)return;  
+ var s=state();if(s!==1&&s!==3)attempt()}  
+  
+window.BDMusic={start:start,pause:pause,ensure:ensure};  
+msgBtn.addEventListener("click",start);  
+load();   /* preload the API now so playback can begin instantly on the gift tap */  
+})();  
+</script>  <!-- ============================================================  
+     WELCOME SCREEN SCRIPT (added) — self-contained IIFE, so none of  
+     its variables can clash with the original script above.  
+     ============================================================ -->  <script>  
+(function(){  
+"use strict";  
+var wl=document.getElementById("wlScreen");  
+if(!wl)return;  
+var gift=document.getElementById("wlGift"),fx=document.getElementById("wlFx"),stage=document.getElementById("wlStage");  
+var reduce=false;try{reduce=window.matchMedia("(prefers-reduced-motion: reduce)").matches}catch(e){}  
+var opened=false,timers=[],heartT=null,sparkT=null;  
+var HEARTS=["💗","💖","💕","💓"],BITS=["💗","✨","💖","🎀","✦","💕"];  
+var lockEls=[document.getElementById("app"),document.getElementById("mb")];  
+  
+function rnd(n){return Math.floor(Math.random()*n)}  
+function later(fn,ms){timers.push(setTimeout(fn,ms))}  
+  
+/* scroll lock + keep the site underneath out of reach of keyboard / screen readers */  
+function lock(){  
+ document.documentElement.classList.add("wl-lock");document.body.classList.add("wl-lock");  
+ lockEls.forEach(function(e){if(!e)return;try{e.inert=true}catch(x){}e.setAttribute("aria-hidden","true")})}  
+function unlock(){  
+ document.documentElement.classList.remove("wl-lock");document.body.classList.remove("wl-lock");  
+ lockEls.forEach(function(e){if(!e)return;try{e.inert=false}catch(x){}e.removeAttribute("aria-hidden")})}  
+lock();  
+wl.addEventListener("touchmove",function(e){e.preventDefault()},{passive:false});  
+  
+/* floating hearts + sparkles */  
+function heart(seed){  
+ if(fx.childElementCount>70)return;  
+ var s=document.createElement("span"),dur=6+Math.random()*5;  
+ s.className="wl-fh";s.textContent=HEARTS[rnd(HEARTS.length)];  
+ s.style.fontSize=(14+Math.random()*24)+"px";s.style.left=(Math.random()*96)+"%";  
+ s.style.animationDuration=dur+"s";s.style.setProperty("--dx",(Math.random()*80-40)+"px");  
+ if(seed)s.style.animationDelay=-(Math.random()*dur)+"s";  
+ fx.appendChild(s);setTimeout(function(){s.remove()},dur*1000+300)}  
+function sparkle(){  
+ if(fx.childElementCount>70)return;  
+ var s=document.createElement("span");  
+ s.className="wl-sp";s.textContent=Math.random()<.25?"✨":"✦";  
+ s.style.fontSize=(9+Math.random()*13)+"px";s.style.left=(Math.random()*96)+"%";s.style.top=(Math.random()*92)+"%";  
+ fx.appendChild(s);setTimeout(function(){s.remove()},2400)}  
+if(reduce){  
+ /* reduced motion: a calm, static scatter instead of animation */  
+ for(var i=0;i<10;i++){var h=document.createElement("span");h.className="wl-fh wl-static";h.textContent=HEARTS[rnd(HEARTS.length)];  
+  h.style.fontSize=(14+Math.random()*20)+"px";h.style.left=(Math.random()*92)+"%";h.style.top=(Math.random()*88)+"%";h.style.opacity=".7";fx.appendChild(h)}  
+ for(var j=0;j<10;j++){var p=document.createElement("span");p.className="wl-sp wl-static";p.textContent="✦";  
+  p.style.fontSize=(9+Math.random()*12)+"px";p.style.left=(Math.random()*94)+"%";p.style.top=(Math.random()*92)+"%";fx.appendChild(p)}  
+}else{  
+ for(var k=0;k<12;k++)heart(true);  
+ heartT=setInterval(heart,550);sparkT=setInterval(sparkle,300)}  
+  
+/* cute birthday chime (Web Audio, no files) — NO LONGER CALLED: the YouTube song replaces it, so two tunes never overlap.  
+   Kept only so the original code stays intact. */  
+function chime(){  
+ var AC=window.AudioContext||window.webkitAudioContext;if(!AC)return;  
+ var ac;try{ac=new AC()}catch(e){return}  
+ try{if(ac.state==="suspended")ac.resume()}catch(e){}  
+ var t0=ac.currentTime+.03,master=ac.createGain();  
+ master.gain.value=.55;master.connect(ac.destination);  
+ function tone(f,st,d,type,v){  
+  var o=ac.createOscillator(),g=ac.createGain();  
+  o.type=type||"sine";o.frequency.setValueAtTime(f,st);o.connect(g);g.connect(master);  
+  g.gain.setValueAtTime(.0001,st);g.gain.exponentialRampToValueAtTime(v||.22,st+.015);g.gain.exponentialRampToValueAtTime(.0001,st+d);  
+  o.start(st);o.stop(st+d+.03)}  
+ /* little pop as the lid lifts */  
+ var po=ac.createOscillator(),pg=ac.createGain();  
+ po.type="sine";po.frequency.setValueAtTime(620,t0);po.frequency.exponentialRampToValueAtTime(150,t0+.12);  
+ po.connect(pg);pg.connect(master);  
+ pg.gain.setValueAtTime(.0001,t0);pg.gain.exponentialRampToValueAtTime(.35,t0+.01);pg.gain.exponentialRampToValueAtTime(.0001,t0+.14);  
+ po.start(t0);po.stop(t0+.16);  
+ /* music-box "Happy birthday to you" opening: G G A G C B */  
+ var m=[[784,0,.14],[784,.15,.14],[880,.3,.28],[784,.6,.28],[1047,.9,.28],[988,1.2,.55]];  
+ m.forEach(function(n){var st=t0+.18+n[1];tone(n[0],st,n[2]+.25,"sine",.24);tone(n[0]*2,st,n[2]+.12,"triangle",.07)});  
+ /* sparkle on top */  
+ [2093,2637,3136,4186].forEach(function(f,i){tone(f,t0+1.55+i*.08,.35,"sine",.1)});  
+ setTimeout(function(){try{ac.close()}catch(e){}},3800)}  
+  
+/* burst of hearts and sparkles from the gift */  
+function burst(n){  
+ if(reduce)return;  
+ var r=stage.getBoundingClientRect(),w=wl.getBoundingClientRect();  
+ var cx=r.left+r.width/2-w.left,cy=r.top+r.height*.42-w.top;  
+ for(var i=0;i<n;i++){  
+  var s=document.createElement("span"),a=Math.random()*Math.PI*2,d=90+Math.random()*170;  
+  s.className="wl-burst";s.textContent=BITS[i%BITS.length];  
+  s.style.fontSize=(16+Math.random()*18)+"px";  
+  s.style.setProperty("--sx",cx+"px");s.style.setProperty("--sy",cy+"px");  
+  s.style.setProperty("--x",(Math.cos(a)*d)+"px");s.style.setProperty("--y",(Math.sin(a)*d-60)+"px");  
+  s.style.setProperty("--r",(Math.random()*540-270)+"deg");  
+  wl.appendChild(s);setTimeout(function(x){x.remove()},1600,s)}}  
+  
+function finish(){  
+ clearInterval(heartT);clearInterval(sparkT);  
+ timers.forEach(clearTimeout);  
+ if(wl.parentNode)wl.parentNode.removeChild(wl);   /* removed for good: shows once per page load */  
+ unlock();  
+ try{window.scrollTo(0,0)}catch(e){}  
+ try{var y=document.getElementById("yes");if(y)y.focus({preventScroll:true})}catch(e){}}  
+  
+function openGift(){  
+ if(opened)return;opened=true;  
+ try{if(window.BDMusic)window.BDMusic.start()}catch(e){}   /* YouTube song starts directly from this click */  
+ wl.classList.add("wl-open");  
+ gift.setAttribute("aria-label","Opening your surprise");  
+ later(function(){burst(26)},reduce?0:260);  
+ later(function(){burst(16)},reduce?0:760);  
+ later(function(){wl.classList.add("wl-out")},reduce?500:1800);  
+ later(finish,reduce?900:2800)}  
+  
+gift.addEventListener("click",openGift);  
+})();  
+</script>  </body>  
+</html>  
